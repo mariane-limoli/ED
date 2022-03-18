@@ -7,19 +7,21 @@ struct horario
         int seg;
     };
 
-
-
-int main(void){
+int main(void){ //Estrutura de dados
 
     void LeStruct(struct horario x[2]);
     void RetStruct(struct horario x[2]);
+    void AltTime(struct horario x[2]);
 
     struct horario time[2];
+
     LeStruct(time);
     RetStruct(time);
+
+    AltTime(time);
 }
 
- void LeStruct(struct horario x[2]){
+ void LeStruct(struct horario x[2]){ //algoritmo
 
     for(int i=0; i<2;i++)
     {
@@ -40,4 +42,17 @@ void RetStruct(struct horario x[2]){
                                              x[i].min,
                                              x[i].seg);
     }
+};
+
+void AltTime(struct horario x[2]){
+
+    for(int i=0; i<2;i++)
+    {
+        printf("Adicionando 3h no horario %i -> %i:%i:%i\n", i+1,
+                                                          x[i].hora+3,
+                                                          x[i].min,
+                                                          x[i].seg);
+    }
+
+
 };
